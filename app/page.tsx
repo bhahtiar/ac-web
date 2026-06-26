@@ -44,7 +44,7 @@ const services = [
   },
 ];
 
-const process = [
+const workSteps = [
   'Survey lokasi dan cek kebutuhan',
   'RAB, jadwal kerja, dan scope pekerjaan',
   'Eksekusi lapangan dengan update progres',
@@ -57,6 +57,40 @@ const projectHighlights = [
   { value: '2-in-1', label: 'renovasi & AC' },
   { value: '24/7', label: 'support properti' },
 ];
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://xeinaservice.web.id';
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${siteUrl}/#localbusiness`,
+  name: 'Xeina Property',
+  url: siteUrl,
+  image: `${siteUrl}/contractor-hero.png`,
+  description: 'Xeina Property melayani renovasi bangunan, maintenance properti, interior, instalasi AC, dan service AC untuk hunian serta bisnis.',
+  telephone: '+6285121040541',
+  email: 'servicexeina@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'CC GF 14, Jl. Boulevard Bukit Gading Raya No.6 15, RT.6/RW.14, Klp. Gading Bar.',
+    addressLocality: 'Jakarta Utara',
+    addressRegion: 'Daerah Khusus Ibukota Jakarta',
+    postalCode: '14240',
+    addressCountry: 'ID',
+  },
+  areaServed: ['Jakarta', 'Tangerang', 'Depok', 'Bogor', 'Bekasi'],
+  priceRange: '$$',
+  knowsAbout: services.map((service) => service.title),
+  makesOffer: services.map((service) => ({
+    '@type': 'Offer',
+    itemOffered: {
+      '@type': 'Service',
+      name: service.title,
+      description: service.desc,
+      areaServed: 'Jabodetabek',
+    },
+  })),
+};
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -111,7 +145,12 @@ export default function Home() {
 
   return (
     <>
-      <a href="https://wa.me/6285121040541" target="_blank" className="whatsapp-float" aria-label="WhatsApp">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
+      <a href="https://wa.me/6285121040541" target="_blank" rel="noopener noreferrer" className="whatsapp-float" aria-label="WhatsApp">
         WA
       </a>
 
@@ -131,13 +170,17 @@ export default function Home() {
 
           <div className="desktop-nav">
             {navItems.map((item) => (
-              <button
+              <a
                 key={item.id}
+                href={`#${item.id}`}
                 className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
-                onClick={() => scrollTo(item.id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollTo(item.id);
+                }}
               >
                 {item.label}
-              </button>
+              </a>
             ))}
             <button className="btn-primary nav-cta" onClick={() => scrollTo('contact')}>
               Minta Estimasi
@@ -154,9 +197,17 @@ export default function Home() {
 
       <div className={`mobile-menu ${mobileOpen ? 'open' : ''}`}>
         {navItems.map((item) => (
-          <button key={item.id} className="mobile-nav-link" onClick={() => scrollTo(item.id)}>
+          <a
+            key={item.id}
+            href={`#${item.id}`}
+            className="mobile-nav-link"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollTo(item.id);
+            }}
+          >
             {item.label}
-          </button>
+          </a>
         ))}
       </div>
 
@@ -252,7 +303,7 @@ export default function Home() {
             <h2 className="section-title">Alur proyek dibuat jelas sebelum eksekusi.</h2>
           </div>
           <div className="process-grid">
-            {process.map((step, index) => (
+            {workSteps.map((step, index) => (
               <div key={step} className={`process-item reveal reveal-delay-${index + 1}`}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <p>{step}</p>
