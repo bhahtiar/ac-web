@@ -6,35 +6,35 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://xeinaservice.web.id
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Xeina Property | General Contractor, Renovasi Bangunan & Service AC",
-    template: "%s | Xeina Property",
+    default: "Xeina Service | Jasa Cuci Service Jual Pasang AC & Vacuum Tungau",
+    template: "%s | Xeina Service",
   },
-  description: "Xeina Property melayani renovasi bangunan, maintenance properti, interior, instalasi AC, dan service AC untuk hunian serta bisnis.",
-  keywords: "Xeina Property, general contractor, kontraktor renovasi, renovasi bangunan, renovasi rumah, renovasi ruko, service AC, instalasi AC, maintenance gedung",
+  description: "Xeina Service melayani jasa cuci AC, service AC, jual AC, pasang AC, dan cuci vacuum tungau untuk sofa serta kasur di Jabodetabek.",
+  keywords: "Xeina Service, jasa cuci AC, service AC, jual AC, pasang AC, cuci vacuum tungau, vacuum tungau sofa, vacuum tungau kasur, cuci sofa, cuci kasur, service AC Jakarta",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Xeina Property | General Contractor, Renovasi Bangunan & Service AC",
-    description: "Renovasi bangunan, maintenance properti, instalasi AC, dan service AC untuk rumah, ruko, kantor, dan bisnis.",
+    title: "Xeina Service | Jasa Cuci Service Jual Pasang AC & Vacuum Tungau",
+    description: "Cuci AC, service AC, jual pasang AC, dan cuci vacuum tungau sofa kasur untuk rumah, apartemen, kantor, dan usaha.",
     url: "/",
-    siteName: "Xeina Property",
+    siteName: "Xeina Service",
     locale: "id_ID",
     type: "website",
     images: [
       {
-        url: "/contractor-hero.png",
+        url: "/xeina-service-hero.png",
         width: 1024,
         height: 1024,
-        alt: "Xeina Property melayani renovasi bangunan dan service AC",
+        alt: "Xeina Service melayani cuci AC, service AC, dan vacuum tungau sofa kasur",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Xeina Property | Renovasi Bangunan & Service AC",
-    description: "General contractor untuk renovasi bangunan, maintenance properti, instalasi AC, dan service AC.",
-    images: ["/contractor-hero.png"],
+    title: "Xeina Service | Cuci Service Jual Pasang AC",
+    description: "Jasa cuci AC, service AC, jual pasang AC, dan cuci vacuum tungau sofa kasur.",
+    images: ["/xeina-service-hero.png"],
   },
   robots: {
     index: true,

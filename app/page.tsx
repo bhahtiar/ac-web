@@ -7,55 +7,55 @@ const navItems = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'Tentang' },
   { id: 'services', label: 'Layanan' },
-  { id: 'projects', label: 'Proyek' },
+  { id: 'projects', label: 'Area' },
   { id: 'contact', label: 'Kontak' },
 ];
 
 const services = [
   {
-    tag: 'Contractor',
-    title: 'Renovasi Bangunan',
-    desc: 'Renovasi rumah, ruko, kantor, fasad, plafon, lantai, kamar mandi, dapur, dan pembaruan ruang agar properti siap dipakai.',
+    tag: 'AC Cleaning',
+    title: 'Cuci AC',
+    desc: 'Pembersihan indoor dan outdoor AC dengan alat profesional agar hembusan lebih dingin, aliran udara lancar, dan unit lebih higienis.',
   },
   {
     tag: 'AC Service',
-    title: 'Service & Cuci AC',
-    desc: 'Cuci AC, perbaikan unit, tambah freon, pengecekan kebocoran, dan perawatan AC untuk hunian maupun properti komersial.',
+    title: 'Service AC',
+    desc: 'Pengecekan keluhan AC tidak dingin, bocor, berisik, mati total, tambah freon, dan perbaikan teknis untuk rumah maupun kantor.',
   },
   {
-    tag: 'Instalasi',
-    title: 'Instalasi AC & Utilitas',
-    desc: 'Pemasangan AC baru, jalur pipa, drainase, listrik pendukung, dan koordinasi utilitas saat pekerjaan renovasi berjalan.',
+    tag: 'Jual AC',
+    title: 'Jual AC',
+    desc: 'Rekomendasi dan penjualan unit AC sesuai ukuran ruangan, kebutuhan pemakaian, efisiensi listrik, dan budget pelanggan.',
   },
   {
-    tag: 'Property Care',
-    title: 'Perawatan Gedung',
-    desc: 'Maintenance berkala, perbaikan ringan, pengecatan, waterproofing, kebocoran, dan pekerjaan darurat untuk properti aktif.',
+    tag: 'Pasang AC',
+    title: 'Pasang AC',
+    desc: 'Instalasi AC baru, jalur pipa, bracket, drainase, vacuum instalasi, dan pengecekan fungsi setelah pemasangan.',
   },
   {
-    tag: 'Fit Out',
-    title: 'Interior & Finishing',
-    desc: 'Partisi, plafon, lighting, kabinet, meja kerja, dan finishing interior untuk rumah, kantor, klinik, retail, dan ruko.',
+    tag: 'Vacuum Tungau',
+    title: 'Cuci Vacuum Tungau Sofa',
+    desc: 'Pembersihan sofa dengan vacuum extractor untuk membantu mengangkat debu halus, tungau, kotoran, dan alergen dari permukaan kain.',
   },
   {
-    tag: 'Survey',
-    title: 'Survey & RAB',
-    desc: 'Survey lokasi, rekomendasi teknis, estimasi biaya, dan tahapan pengerjaan yang jelas sebelum proyek dimulai.',
+    tag: 'Hygiene Care',
+    title: 'Cuci Vacuum Tungau Kasur',
+    desc: 'Vacuum tungau kasur, spring bed, dan bed cover agar area tidur terasa lebih bersih, segar, dan nyaman digunakan.',
   },
 ];
 
 const workSteps = [
-  'Survey lokasi dan cek kebutuhan',
-  'RAB, jadwal kerja, dan scope pekerjaan',
-  'Eksekusi lapangan dengan update progres',
-  'Serah terima, garansi, dan maintenance',
+  'Pilih layanan dan jadwal kunjungan',
+  'Teknisi cek unit atau material sofa/kasur',
+  'Pengerjaan dengan alat service dan vacuum profesional',
+  'Finishing, pengecekan hasil, dan saran perawatan',
 ];
 
 const projectHighlights = [
   { value: '8+', label: 'tahun pengalaman' },
-  { value: '240+', label: 'pekerjaan selesai' },
-  { value: '2-in-1', label: 'renovasi & AC' },
-  { value: '24/7', label: 'support properti' },
+  { value: '1.500+', label: 'unit & sofa/kasur dikerjakan' },
+  { value: '2-in-1', label: 'AC & vacuum tungau' },
+  { value: '24/7', label: 'booking via WhatsApp' },
 ];
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://xeinaservice.web.id';
@@ -64,10 +64,10 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': `${siteUrl}/#localbusiness`,
-  name: 'Xeina Property',
+  name: 'Xeina Service',
   url: siteUrl,
-  image: `${siteUrl}/contractor-hero.png`,
-  description: 'Xeina Property melayani renovasi bangunan, maintenance properti, interior, instalasi AC, dan service AC untuk hunian serta bisnis.',
+  image: `${siteUrl}/xeina-service-hero.png`,
+  description: 'Xeina Service melayani jasa cuci AC, service AC, jual AC, pasang AC, dan cuci vacuum tungau untuk sofa serta kasur.',
   telephone: '+6285121040541',
   email: 'servicexeina@gmail.com',
   address: {
@@ -139,7 +139,7 @@ export default function Home() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Halo Xeina Property, saya ${formData.name}. Saya butuh ${formData.service}. No HP: ${formData.phone}. Detail: ${formData.message}`;
+    const text = `Halo Xeina Service, saya ${formData.name}. Saya butuh ${formData.service}. No HP: ${formData.phone}. Detail: ${formData.message}`;
     window.open(`https://wa.me/6285121040541?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -156,15 +156,15 @@ export default function Home() {
 
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-inner">
-          <button className="brand" onClick={() => scrollTo('home')} aria-label="Xeina Property home">
+          <button className="brand" onClick={() => scrollTo('home')} aria-label="Xeina Service home">
             <span className="brand-mark" aria-hidden="true">
               <span className="tower tower-left" />
               <span className="tower tower-center" />
               <span className="tower tower-right" />
             </span>
             <span className="brand-copy">
-              <span className="brand-name">Xeina Property</span>
-              <span className="brand-subtitle">General Contractor</span>
+              <span className="brand-name">Xeina Service</span>
+              <span className="brand-subtitle">AC & Hygiene Care</span>
             </span>
           </button>
 
@@ -183,7 +183,7 @@ export default function Home() {
               </a>
             ))}
             <button className="btn-primary nav-cta" onClick={() => scrollTo('contact')}>
-              Minta Estimasi
+              Booking Layanan
             </button>
           </div>
 
@@ -215,29 +215,29 @@ export default function Home() {
         <section id="home" className="hero-section">
           <Image
             className="hero-image"
-            src="/contractor-hero.png"
-            alt="Tim kontraktor mengerjakan renovasi bangunan dan layanan AC"
+            src="/xeina-service-hero.png"
+            alt="Teknisi Xeina Service membersihkan AC, sofa, dan kasur dengan vacuum tungau"
             fill
             priority
             sizes="100vw"
           />
           <div className="hero-overlay" />
           <div className="hero-content">
-            <p className="hero-eyebrow reveal">Xeina Property General Contractor</p>
+            <p className="hero-eyebrow reveal">Xeina Service AC & Vacuum Tungau</p>
             <h1 className="hero-title reveal reveal-delay-1">
-              Renovasi bangunan dan service AC dalam satu tim properti.
+              Jasa cuci service jual pasang AC dan vacuum tungau.
             </h1>
             <p className="hero-subtitle reveal reveal-delay-2">
-              Kami menangani renovasi rumah, ruko, kantor, pekerjaan finishing, maintenance properti, instalasi AC, dan service AC untuk kebutuhan hunian maupun bisnis.
+              Layanan rumah dan kantor untuk cuci AC, service AC, jual AC, pasang AC, serta cuci vacuum tungau sofa dan kasur dengan teknisi profesional.
             </p>
             <div className="hero-chips reveal reveal-delay-3" aria-label="Layanan utama">
-              <span>Renovasi</span>
               <span>Service AC</span>
-              <span>Maintenance</span>
+              <span>Jual & Pasang AC</span>
+              <span>Vacuum Tungau</span>
             </div>
             <div className="hero-actions reveal reveal-delay-3">
               <button className="btn-primary" onClick={() => scrollTo('contact')}>
-                Konsultasi Proyek
+                Booking Sekarang
               </button>
               <button className="btn-ghost" onClick={() => scrollTo('services')}>
                 Lihat Layanan
@@ -245,8 +245,8 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-status reveal reveal-delay-4">
-            <span>Survey cepat Jabodetabek</span>
-            <strong>Renovasi bangunan, maintenance, dan AC</strong>
+            <span>Booking cepat Jabodetabek</span>
+            <strong>AC bersih, sofa nyaman, kasur lebih higienis</strong>
           </div>
         </section>
 
@@ -262,14 +262,14 @@ export default function Home() {
         <section id="about" className="section split-section">
           <div className="section-copy reveal">
             <p className="section-eyebrow">Tentang Kami</p>
-            <h2 className="section-title">Kontraktor properti dengan rasa kerja yang rapi dan terukur.</h2>
+            <h2 className="section-title">Teknisi layanan AC dan kebersihan tungau untuk rumah sehat.</h2>
           </div>
           <div className="about-copy reveal reveal-delay-1">
             <p>
-              Xeina Property membantu pemilik rumah dan bisnis menyelesaikan pekerjaan bangunan tanpa harus mengatur banyak vendor terpisah. Tim kami menggabungkan renovasi, finishing, maintenance, utilitas, dan AC dalam satu alur kerja yang lebih mudah dipantau.
+              Xeina Service membantu pemilik rumah, apartemen, kantor, dan tempat usaha menjaga kenyamanan ruangan lewat perawatan AC serta pembersihan sofa dan kasur dari debu halus dan tungau.
             </p>
             <p>
-              Setiap pekerjaan dimulai dari survey, scope yang jelas, estimasi biaya, lalu update progres selama pengerjaan. Hasilnya: bangunan siap dipakai, utilitas berfungsi, dan detail finishing tidak tertinggal.
+              Kami mengutamakan jadwal yang jelas, teknisi rapi, alat kerja higienis, dan komunikasi cepat via WhatsApp agar pelanggan mudah booking layanan rutin maupun pekerjaan darurat.
             </p>
           </div>
         </section>
@@ -277,9 +277,9 @@ export default function Home() {
         <section id="services" className="section">
           <div className="section-heading reveal">
             <p className="section-eyebrow">Layanan Kami</p>
-            <h2 className="section-title">Renovasi bangunan, maintenance, dan service AC.</h2>
+            <h2 className="section-title">Cuci AC, service AC, jual pasang AC, dan vacuum tungau.</h2>
             <p className="section-body">
-              Pilih layanan sesuai kebutuhan properti, atau minta survey untuk paket pekerjaan gabungan.
+              Pilih layanan sesuai kebutuhan rumah atau kantor, dari AC yang kurang dingin sampai kasur dan sofa yang butuh dibersihkan.
             </p>
           </div>
 
@@ -300,7 +300,7 @@ export default function Home() {
         <section className="section process-section">
           <div className="section-heading reveal">
             <p className="section-eyebrow">Cara Kerja</p>
-            <h2 className="section-title">Alur proyek dibuat jelas sebelum eksekusi.</h2>
+            <h2 className="section-title">Booking mudah, pengerjaan rapi, hasil langsung terasa.</h2>
           </div>
           <div className="process-grid">
             {workSteps.map((step, index) => (
@@ -315,13 +315,13 @@ export default function Home() {
         <section id="projects" className="section projects-section">
           <div className="section-heading reveal">
             <p className="section-eyebrow">Area Pekerjaan</p>
-            <h2 className="section-title">Siap untuk hunian, usaha, dan properti operasional.</h2>
+            <h2 className="section-title">Siap untuk rumah, apartemen, kantor, dan tempat usaha.</h2>
           </div>
           <div className="project-grid">
             {[
-              ['Rumah Tinggal', 'Renovasi ruang keluarga, dapur, kamar mandi, plafon, cat, instalasi AC, dan perbaikan AC.'],
-              ['Ruko & Retail', 'Fit out toko, fasad, instalasi listrik pendukung, AC, dan perawatan berkala.'],
-              ['Kantor & Klinik', 'Partisi, interior, utilitas, pencahayaan, service AC, dan maintenance gedung.'],
+              ['Rumah & Apartemen', 'Cuci AC, service AC, pasang AC, vacuum tungau kasur, sofa, dan area tidur keluarga.'],
+              ['Kantor & Ruko', 'Perawatan AC kantor, pengecekan unit, dan pembersihan sofa ruang tunggu atau area kerja.'],
+              ['Kos, Klinik & Usaha', 'Layanan berkala untuk AC, kasur, sofa, dan area pelanggan agar ruangan tetap nyaman.'],
             ].map(([title, desc]) => (
               <article key={title} className="project-card reveal">
                 <h3>{title}</h3>
@@ -334,8 +334,8 @@ export default function Home() {
         <section id="contact" className="section contact-section">
           <div className="section-heading reveal">
             <p className="section-eyebrow">Kontak</p>
-            <h2 className="section-title">Ceritakan kebutuhan bangunan Anda.</h2>
-            <p className="section-body">Isi form singkat, lalu kami arahkan ke WhatsApp untuk jadwal survey atau estimasi awal.</p>
+            <h2 className="section-title">Booking layanan Xeina Service.</h2>
+            <p className="section-body">Isi form singkat, lalu kami arahkan ke WhatsApp untuk jadwal teknisi dan estimasi awal.</p>
           </div>
 
           <div className="contact-grid">
@@ -352,16 +352,18 @@ export default function Home() {
                 Layanan
                 <select required value={formData.service} onChange={(e) => setFormData({ ...formData, service: e.target.value })}>
                   <option value="">Pilih layanan</option>
-                  <option>Renovasi Rumah / Ruko</option>
-                  <option>Service AC / Instalasi AC</option>
-                  <option>Maintenance Gedung</option>
-                  <option>Interior / Fit Out</option>
-                  <option>Survey & RAB</option>
+                  <option>Cuci AC</option>
+                  <option>Service AC</option>
+                  <option>Jual AC</option>
+                  <option>Pasang AC</option>
+                  <option>Cuci Vacuum Tungau Sofa</option>
+                  <option>Cuci Vacuum Tungau Kasur</option>
+                  <option>Paket AC + Vacuum Tungau</option>
                 </select>
               </label>
               <label>
                 Detail Kebutuhan
-                <textarea rows={4} placeholder="Lokasi, ukuran area, keluhan, target waktu, atau foto kondisi bisa dikirim via WhatsApp." value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
+                <textarea rows={4} placeholder="Lokasi, jumlah unit AC, keluhan AC, jumlah sofa/kasur, atau jadwal yang diinginkan." value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
               </label>
               <button className="btn-primary" type="submit">Kirim via WhatsApp</button>
             </form>
@@ -373,7 +375,7 @@ export default function Home() {
               <p><span>Alamat</span>CC GF 14, Jl. Boulevard Bukit Gading Raya No.6 15, RT.6/RW.14, Klp. Gading Bar., Kec. Klp. Gading, Jkt Utara, Daerah Khusus Ibukota Jakarta 14240</p>
               <p><span>Area</span>Jakarta, Tangerang, Depok, Bogor, Bekasi</p>
               <div className="panel-note">
-                Survey dapat dijadwalkan untuk pekerjaan renovasi bangunan, service AC, instalasi AC, dan perawatan properti.
+                Booking dapat dijadwalkan untuk cuci AC, service AC, jual pasang AC, dan cuci vacuum tungau sofa atau kasur.
               </div>
             </aside>
           </div>
@@ -381,18 +383,18 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        <button className="brand" onClick={() => scrollTo('home')} aria-label="Xeina Property home">
+        <button className="brand" onClick={() => scrollTo('home')} aria-label="Xeina Service home">
           <span className="brand-mark" aria-hidden="true">
             <span className="tower tower-left" />
             <span className="tower tower-center" />
             <span className="tower tower-right" />
           </span>
           <span className="brand-copy">
-            <span className="brand-name">Xeina Property</span>
-            <span className="brand-subtitle">General Contractor</span>
+            <span className="brand-name">Xeina Service</span>
+            <span className="brand-subtitle">AC & Hygiene Care</span>
           </span>
         </button>
-        <p>{new Date().getFullYear()} Xeina Property. General contractor, renovation building, maintenance, and AC service.</p>
+        <p>{new Date().getFullYear()} Xeina Service. Jasa cuci service jual pasang AC dan cuci vacuum tungau sofa kasur.</p>
       </footer>
     </>
   );
