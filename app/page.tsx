@@ -106,12 +106,12 @@ export default function Home() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const text = `Halo Xeina Property, saya ${formData.name}. Saya butuh ${formData.service}. No HP: ${formData.phone}. Detail: ${formData.message}`;
-    window.open(`https://wa.me/6281944800541?text=${encodeURIComponent(text)}`, '_blank');
+    window.open(`https://wa.me/6285121040541?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   return (
     <>
-      <a href="https://wa.me/6281944800541" target="_blank" className="whatsapp-float" aria-label="WhatsApp">
+      <a href="https://wa.me/6285121040541" target="_blank" className="whatsapp-float" aria-label="WhatsApp">
         WA
       </a>
 
@@ -287,7 +287,7 @@ export default function Home() {
               </label>
               <label>
                 Nomor WhatsApp
-                <input type="tel" placeholder="0819 4480 0541" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
+                <input type="tel" placeholder="0851 2104 0541" required value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
               </label>
               <label>
                 Layanan
@@ -309,9 +309,9 @@ export default function Home() {
 
             <aside className="contact-panel reveal reveal-delay-2">
               <h3>Informasi Kontak</h3>
-              <p><span>WhatsApp</span>0819-4480-0541</p>
-              <p><span>Email</span>halo@xeinaproperty.id</p>
-              <p><span>Workshop</span>Tangerang Selatan, Banten</p>
+              <p><span>WhatsApp</span>0851-2104-0541</p>
+              <p><span>Email</span>servicexeina@gmail.com</p>
+              <p><span>Alamat</span>CC GF 14, Jl. Boulevard Bukit Gading Raya No.6 15, RT.6/RW.14, Klp. Gading Bar., Kec. Klp. Gading, Jkt Utara, Daerah Khusus Ibukota Jakarta 14240</p>
               <p><span>Area</span>Jakarta, Tangerang, Depok, Bogor, Bekasi</p>
               <div className="panel-note">
                 Survey dapat dijadwalkan untuk pekerjaan renovasi bangunan, service AC, instalasi AC, dan perawatan properti.
