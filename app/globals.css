@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #111827;
-  --charcoal: #1f2933;
-  --steel: #35566e;
-  --slate: #eef2f5;
-  --paper: #fbfaf7;
-  --line: rgba(31, 41, 51, 0.12);
-  --muted: #65717c;
-  --accent: #d96f32;
-  --accent-dark: #a84e21;
+  --ink: #05070a;
+  --charcoal: #101820;
+  --steel: #0d568f;
+  --blue: #075a99;
+  --blue-dark: #02385f;
+  --blue-soft: #e9f3fb;
+  --slate: #f1f5f8;
+  --paper: #ffffff;
+  --line: rgba(5, 7, 10, 0.12);
+  --muted: #66717b;
+  --accent: #075a99;
+  --accent-dark: #02385f;
   --white: #ffffff;
 }
 
@@ -45,7 +48,7 @@ button {
   position: fixed;
   inset: 0 0 auto;
   z-index: 100;
-  background: rgba(251, 250, 247, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   border-bottom: 1px solid transparent;
   backdrop-filter: blur(16px);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -69,7 +72,7 @@ button {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   background: transparent;
   color: var(--ink);
   cursor: pointer;
@@ -77,27 +80,81 @@ button {
 }
 
 .brand-mark {
-  width: 42px;
+  width: 56px;
   height: 42px;
+  position: relative;
   display: inline-flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  background: var(--charcoal);
-  color: var(--white);
-  border-radius: 6px;
-  font-weight: 800;
-  letter-spacing: 0;
+  overflow: hidden;
+  border-bottom: 3px solid var(--blue);
+}
+
+.brand-mark::before {
+  content: '';
+  position: absolute;
+  width: 48px;
+  height: 38px;
+  bottom: -13px;
+  border-radius: 48px 48px 0 0;
+  background: var(--blue);
+  opacity: 0.96;
+}
+
+.tower {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 12px;
+  background: var(--ink);
+  clip-path: polygon(50% 0, 100% 12%, 100% 100%, 0 100%, 0 12%);
+}
+
+.tower::after {
+  content: '';
+  position: absolute;
+  inset: 6px 3px 5px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--white) 0 4px,
+    transparent 4px 9px
+  );
+}
+
+.tower-left {
+  height: 28px;
+  transform: skewY(8deg);
+}
+
+.tower-center {
+  width: 16px;
+  height: 40px;
+  margin-inline: 2px;
+}
+
+.tower-right {
+  height: 30px;
+  transform: skewY(-8deg);
+}
+
+.brand-copy {
+  display: grid;
+  gap: 3px;
 }
 
 .brand-name {
-  display: grid;
   font-weight: 800;
-  line-height: 1;
-  letter-spacing: 0;
+  line-height: 0.95;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.brand-name span {
-  color: var(--accent);
+.brand-subtitle {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
 }
 
 .desktop-nav {
@@ -166,7 +223,7 @@ button {
   display: none;
   width: 42px;
   height: 42px;
-  background: var(--charcoal);
+  background: var(--ink);
   border-radius: 6px;
   cursor: pointer;
   padding: 11px 10px;
@@ -237,8 +294,24 @@ button {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(17, 24, 39, 0.88) 0%, rgba(17, 24, 39, 0.68) 42%, rgba(17, 24, 39, 0.16) 100%),
-    linear-gradient(0deg, rgba(17, 24, 39, 0.48) 0%, rgba(17, 24, 39, 0.04) 45%);
+    linear-gradient(90deg, rgba(5, 7, 10, 0.92) 0%, rgba(2, 56, 95, 0.76) 44%, rgba(5, 7, 10, 0.12) 100%),
+    radial-gradient(circle at 78% 28%, rgba(7, 90, 153, 0.42), transparent 34%),
+    linear-gradient(0deg, rgba(5, 7, 10, 0.55) 0%, rgba(5, 7, 10, 0.04) 45%);
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  right: max(-120px, calc((100vw - 1180px) / 2 - 160px));
+  top: 18%;
+  z-index: 1;
+  width: clamp(260px, 36vw, 520px);
+  aspect-ratio: 1;
+  border-radius: 50% 50% 0 0;
+  border: 28px solid rgba(7, 90, 153, 0.42);
+  border-bottom: 0;
+  opacity: 0.72;
+  pointer-events: none;
 }
 
 .hero-content {
@@ -289,7 +362,7 @@ button {
   width: min(360px, calc(100% - 32px));
   padding: 18px;
   border-radius: 8px;
-  background: rgba(251, 250, 247, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 18px 50px rgba(17, 24, 39, 0.22);
 }
 
@@ -317,7 +390,7 @@ button {
   background: var(--white);
   border: 1px solid var(--line);
   border-radius: 8px;
-  box-shadow: 0 18px 44px rgba(17, 24, 39, 0.08);
+  box-shadow: 0 18px 44px rgba(7, 90, 153, 0.13);
 }
 
 .stat-item {
@@ -414,7 +487,7 @@ button {
 }
 
 .service-card:hover {
-  border-color: rgba(217, 111, 50, 0.36);
+  border-color: rgba(7, 90, 153, 0.36);
   transform: translateY(-3px);
 }
 
@@ -440,7 +513,9 @@ button {
 .process-section {
   width: 100%;
   padding: 96px max(16px, calc((100vw - 1180px) / 2));
-  background: var(--charcoal);
+  background:
+    linear-gradient(135deg, rgba(7, 90, 153, 0.18), transparent 38%),
+    var(--ink);
   color: var(--white);
 }
 
@@ -484,7 +559,7 @@ button {
 .project-card {
   min-height: 190px;
   padding: 28px;
-  background: linear-gradient(180deg, var(--white), #f4f0ea);
+  background: linear-gradient(180deg, var(--white), var(--blue-soft));
 }
 
 .contact-section {
@@ -561,7 +636,7 @@ button {
   margin-top: 22px;
   padding: 18px;
   border-left: 4px solid var(--accent);
-  background: #fff7f1;
+  background: var(--blue-soft);
   color: var(--muted);
   line-height: 1.65;
 }
@@ -656,7 +731,7 @@ button {
   }
 
   .brand-mark {
-    width: 38px;
+    width: 50px;
     height: 38px;
   }
 
@@ -666,7 +741,7 @@ button {
   }
 
   .hero-overlay {
-    background: linear-gradient(0deg, rgba(17, 24, 39, 0.9) 0%, rgba(17, 24, 39, 0.62) 58%, rgba(17, 24, 39, 0.28) 100%);
+    background: linear-gradient(0deg, rgba(5, 7, 10, 0.92) 0%, rgba(2, 56, 95, 0.72) 58%, rgba(5, 7, 10, 0.28) 100%);
   }
 
   .hero-content {

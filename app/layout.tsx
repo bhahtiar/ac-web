@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Arctic Contractor | General Contractor, Renovasi & Service AC",
-  description: "General contractor untuk renovasi bangunan, pembangunan sipil, interior, maintenance gedung, listrik, plumbing, dan service AC.",
-  keywords: "general contractor, kontraktor renovasi, renovasi rumah, renovasi ruko, service AC, pembangunan bangunan, maintenance gedung",
+  title: "Xeina Property | General Contractor, Renovasi Bangunan & Service AC",
+  description: "Xeina Property melayani renovasi bangunan, maintenance properti, interior, instalasi AC, dan service AC untuk hunian serta bisnis.",
+  keywords: "Xeina Property, general contractor, kontraktor renovasi, renovasi bangunan, renovasi rumah, renovasi ruko, service AC, instalasi AC, maintenance gedung",
 };
 
 export default function RootLayout({

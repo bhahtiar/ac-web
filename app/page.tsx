@@ -13,34 +13,34 @@ const navItems = [
 
 const services = [
   {
-    tag: 'Renovasi',
-    title: 'Renovasi Rumah & Ruko',
-    desc: 'Perbaikan ruang, fasad, lantai, plafon, kamar mandi, dapur, dan pembaruan layout agar bangunan lebih nyaman dipakai.',
+    tag: 'Contractor',
+    title: 'Renovasi Bangunan',
+    desc: 'Renovasi rumah, ruko, kantor, fasad, plafon, lantai, kamar mandi, dapur, dan pembaruan ruang agar properti siap dipakai.',
   },
   {
-    tag: 'Bangun Baru',
-    title: 'Pembangunan Sipil',
-    desc: 'Pekerjaan struktur, dinding, atap, finishing, dan koordinasi lapangan untuk hunian, toko, kantor kecil, dan gudang.',
+    tag: 'AC Service',
+    title: 'Service & Cuci AC',
+    desc: 'Cuci AC, perbaikan unit, tambah freon, pengecekan kebocoran, dan perawatan AC untuk hunian maupun properti komersial.',
   },
   {
-    tag: 'MEP',
-    title: 'Listrik, Plumbing & AC',
-    desc: 'Instalasi utilitas bangunan, service AC, cuci AC, perbaikan unit, tambah freon, serta jalur pipa dan drainase AC.',
+    tag: 'Instalasi',
+    title: 'Instalasi AC & Utilitas',
+    desc: 'Pemasangan AC baru, jalur pipa, drainase, listrik pendukung, dan koordinasi utilitas saat pekerjaan renovasi berjalan.',
   },
   {
-    tag: 'Maintenance',
+    tag: 'Property Care',
     title: 'Perawatan Gedung',
-    desc: 'Pengecekan berkala, perbaikan ringan, pengecatan, kebocoran, waterproofing, dan pekerjaan darurat untuk properti aktif.',
+    desc: 'Maintenance berkala, perbaikan ringan, pengecatan, waterproofing, kebocoran, dan pekerjaan darurat untuk properti aktif.',
   },
   {
-    tag: 'Interior',
-    title: 'Fit Out Interior',
-    desc: 'Pekerjaan partisi, plafon, lighting, kabinet, meja kerja, dan finishing interior untuk rumah, kantor, klinik, atau retail.',
+    tag: 'Fit Out',
+    title: 'Interior & Finishing',
+    desc: 'Partisi, plafon, lighting, kabinet, meja kerja, dan finishing interior untuk rumah, kantor, klinik, retail, dan ruko.',
   },
   {
-    tag: 'Estimasi',
+    tag: 'Survey',
     title: 'Survey & RAB',
-    desc: 'Survey lokasi, rekomendasi teknis, estimasi biaya, dan tahapan kerja yang jelas sebelum proyek dimulai.',
+    desc: 'Survey lokasi, rekomendasi teknis, estimasi biaya, dan tahapan pengerjaan yang jelas sebelum proyek dimulai.',
   },
 ];
 
@@ -53,9 +53,9 @@ const process = [
 
 const projectHighlights = [
   { value: '8+', label: 'tahun pengalaman' },
-  { value: '240+', label: 'proyek selesai' },
-  { value: '35+', label: 'tim & mitra teknis' },
-  { value: '24/7', label: 'support darurat' },
+  { value: '240+', label: 'pekerjaan selesai' },
+  { value: '2-in-1', label: 'renovasi & AC' },
+  { value: '24/7', label: 'support properti' },
 ];
 
 export default function Home() {
@@ -105,7 +105,7 @@ export default function Home() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const text = `Halo Arctic Contractor, saya ${formData.name}. Saya butuh ${formData.service}. No HP: ${formData.phone}. Detail: ${formData.message}`;
+    const text = `Halo Xeina Property, saya ${formData.name}. Saya butuh ${formData.service}. No HP: ${formData.phone}. Detail: ${formData.message}`;
     window.open(`https://wa.me/6281944800541?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -117,9 +117,16 @@ export default function Home() {
 
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav-inner">
-          <button className="brand" onClick={() => scrollTo('home')} aria-label="Arctic Contractor home">
-            <span className="brand-mark">AC</span>
-            <span className="brand-name">Arctic<span>Contractor</span></span>
+          <button className="brand" onClick={() => scrollTo('home')} aria-label="Xeina Property home">
+            <span className="brand-mark" aria-hidden="true">
+              <span className="tower tower-left" />
+              <span className="tower tower-center" />
+              <span className="tower tower-right" />
+            </span>
+            <span className="brand-copy">
+              <span className="brand-name">Xeina Property</span>
+              <span className="brand-subtitle">General Contractor</span>
+            </span>
           </button>
 
           <div className="desktop-nav">
@@ -158,19 +165,19 @@ export default function Home() {
           <Image
             className="hero-image"
             src="/contractor-hero.png"
-            alt="Tim kontraktor mengerjakan renovasi rumah dan layanan AC"
+            alt="Tim kontraktor mengerjakan renovasi bangunan dan layanan AC"
             fill
             priority
             sizes="100vw"
           />
           <div className="hero-overlay" />
           <div className="hero-content">
-            <p className="hero-eyebrow reveal">General Contractor & AC Service</p>
+            <p className="hero-eyebrow reveal">Xeina Property General Contractor</p>
             <h1 className="hero-title reveal reveal-delay-1">
-              Bangun, renovasi, dan rawat properti dengan satu tim.
+              Renovasi bangunan dan service AC dalam satu tim properti.
             </h1>
             <p className="hero-subtitle reveal reveal-delay-2">
-              Kami menangani renovasi bangunan, pekerjaan sipil, interior, listrik, plumbing, hingga service AC untuk rumah, ruko, kantor, dan properti komersial.
+              Kami menangani renovasi rumah, ruko, kantor, pekerjaan finishing, maintenance properti, instalasi AC, dan service AC untuk kebutuhan hunian maupun bisnis.
             </p>
             <div className="hero-actions reveal reveal-delay-3">
               <button className="btn-primary" onClick={() => scrollTo('contact')}>
@@ -183,7 +190,7 @@ export default function Home() {
           </div>
           <div className="hero-status reveal reveal-delay-4">
             <span>Survey cepat Jabodetabek</span>
-            <strong>Renovasi, bangun baru, dan AC</strong>
+            <strong>Renovasi bangunan, maintenance, dan AC</strong>
           </div>
         </section>
 
@@ -199,11 +206,11 @@ export default function Home() {
         <section id="about" className="section split-section">
           <div className="section-copy reveal">
             <p className="section-eyebrow">Tentang Kami</p>
-            <h2 className="section-title">Kontraktor praktis untuk pekerjaan yang harus rapi dari awal.</h2>
+            <h2 className="section-title">Kontraktor properti dengan rasa kerja yang rapi dan terukur.</h2>
           </div>
           <div className="about-copy reveal reveal-delay-1">
             <p>
-              Arctic Contractor membantu pemilik rumah dan bisnis menyelesaikan pekerjaan bangunan tanpa harus mengatur banyak vendor terpisah. Tim kami menggabungkan pekerjaan sipil, finishing, utilitas, dan AC dalam satu alur kerja yang lebih mudah dipantau.
+              Xeina Property membantu pemilik rumah dan bisnis menyelesaikan pekerjaan bangunan tanpa harus mengatur banyak vendor terpisah. Tim kami menggabungkan renovasi, finishing, maintenance, utilitas, dan AC dalam satu alur kerja yang lebih mudah dipantau.
             </p>
             <p>
               Setiap pekerjaan dimulai dari survey, scope yang jelas, estimasi biaya, lalu update progres selama pengerjaan. Hasilnya: bangunan siap dipakai, utilitas berfungsi, dan detail finishing tidak tertinggal.
@@ -214,9 +221,9 @@ export default function Home() {
         <section id="services" className="section">
           <div className="section-heading reveal">
             <p className="section-eyebrow">Layanan Kami</p>
-            <h2 className="section-title">Dari renovasi bangunan sampai service AC.</h2>
+            <h2 className="section-title">Renovasi bangunan, maintenance, dan service AC.</h2>
             <p className="section-body">
-              Pilih layanan sesuai kebutuhan, atau minta survey untuk paket pekerjaan gabungan.
+              Pilih layanan sesuai kebutuhan properti, atau minta survey untuk paket pekerjaan gabungan.
             </p>
           </div>
 
@@ -249,13 +256,13 @@ export default function Home() {
         <section id="projects" className="section projects-section">
           <div className="section-heading reveal">
             <p className="section-eyebrow">Area Pekerjaan</p>
-            <h2 className="section-title">Siap untuk hunian, usaha, dan gedung operasional.</h2>
+            <h2 className="section-title">Siap untuk hunian, usaha, dan properti operasional.</h2>
           </div>
           <div className="project-grid">
             {[
-              ['Rumah Tinggal', 'Renovasi ruang keluarga, dapur, kamar mandi, plafon, cat, dan perbaikan AC.'],
-              ['Ruko & Retail', 'Fit out toko, fasad, instalasi listrik, plumbing, AC, dan perawatan berkala.'],
-              ['Kantor & Klinik', 'Partisi, interior, jaringan utilitas, pencahayaan, dan maintenance gedung.'],
+              ['Rumah Tinggal', 'Renovasi ruang keluarga, dapur, kamar mandi, plafon, cat, instalasi AC, dan perbaikan AC.'],
+              ['Ruko & Retail', 'Fit out toko, fasad, instalasi listrik pendukung, AC, dan perawatan berkala.'],
+              ['Kantor & Klinik', 'Partisi, interior, utilitas, pencahayaan, service AC, dan maintenance gedung.'],
             ].map(([title, desc]) => (
               <article key={title} className="project-card reveal">
                 <h3>{title}</h3>
@@ -287,11 +294,10 @@ export default function Home() {
                 <select required value={formData.service} onChange={(e) => setFormData({ ...formData, service: e.target.value })}>
                   <option value="">Pilih layanan</option>
                   <option>Renovasi Rumah / Ruko</option>
-                  <option>Bangun Baru</option>
                   <option>Service AC / Instalasi AC</option>
-                  <option>Listrik, Plumbing, dan MEP</option>
-                  <option>Interior / Fit Out</option>
                   <option>Maintenance Gedung</option>
+                  <option>Interior / Fit Out</option>
+                  <option>Survey & RAB</option>
                 </select>
               </label>
               <label>
@@ -304,11 +310,11 @@ export default function Home() {
             <aside className="contact-panel reveal reveal-delay-2">
               <h3>Informasi Kontak</h3>
               <p><span>WhatsApp</span>0819-4480-0541</p>
-              <p><span>Email</span>halo@arcticcontractor.id</p>
+              <p><span>Email</span>halo@xeinaproperty.id</p>
               <p><span>Workshop</span>Tangerang Selatan, Banten</p>
               <p><span>Area</span>Jakarta, Tangerang, Depok, Bogor, Bekasi</p>
               <div className="panel-note">
-                Survey dapat dijadwalkan untuk pekerjaan renovasi, bangun baru, service AC, dan perawatan properti.
+                Survey dapat dijadwalkan untuk pekerjaan renovasi bangunan, service AC, instalasi AC, dan perawatan properti.
               </div>
             </aside>
           </div>
@@ -316,11 +322,18 @@ export default function Home() {
       </main>
 
       <footer className="footer">
-        <button className="brand" onClick={() => scrollTo('home')} aria-label="Arctic Contractor home">
-          <span className="brand-mark">AC</span>
-          <span className="brand-name">Arctic<span>Contractor</span></span>
+        <button className="brand" onClick={() => scrollTo('home')} aria-label="Xeina Property home">
+          <span className="brand-mark" aria-hidden="true">
+            <span className="tower tower-left" />
+            <span className="tower tower-center" />
+            <span className="tower tower-right" />
+          </span>
+          <span className="brand-copy">
+            <span className="brand-name">Xeina Property</span>
+            <span className="brand-subtitle">General Contractor</span>
+          </span>
         </button>
-        <p>{new Date().getFullYear()} Arctic Contractor. General contractor, renovation, building maintenance, and AC service.</p>
+        <p>{new Date().getFullYear()} Xeina Property. General contractor, renovation building, maintenance, and AC service.</p>
       </footer>
     </>
   );
