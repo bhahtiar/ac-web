@@ -225,7 +225,7 @@ export default function Home() {
           <div className="hero-content">
             <p className="hero-eyebrow reveal">Xeina Service AC & Vacuum Tungau</p>
             <h1 className="hero-title reveal reveal-delay-1">
-              Jasa cuci service jual pasang AC dan vacuum tungau.
+              Solusi AC dan kebersihan tungau untuk rumah lebih nyaman.
             </h1>
             <p className="hero-subtitle reveal reveal-delay-2">
               Layanan rumah dan kantor untuk cuci AC, service AC, jual AC, pasang AC, serta cuci vacuum tungau sofa dan kasur dengan teknisi profesional.
