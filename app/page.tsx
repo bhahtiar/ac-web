@@ -179,6 +179,11 @@ export default function Home() {
             <p className="hero-subtitle reveal reveal-delay-2">
               Kami menangani renovasi rumah, ruko, kantor, pekerjaan finishing, maintenance properti, instalasi AC, dan service AC untuk kebutuhan hunian maupun bisnis.
             </p>
+            <div className="hero-chips reveal reveal-delay-3" aria-label="Layanan utama">
+              <span>Renovasi</span>
+              <span>Service AC</span>
+              <span>Maintenance</span>
+            </div>
             <div className="hero-actions reveal reveal-delay-3">
               <button className="btn-primary" onClick={() => scrollTo('contact')}>
                 Konsultasi Proyek
@@ -230,7 +235,10 @@ export default function Home() {
           <div className="service-grid">
             {services.map((service, index) => (
               <article key={service.title} className={`service-card reveal reveal-delay-${(index % 3) + 1}`}>
-                <span className="service-tag">{service.tag}</span>
+                <div className="service-card-top">
+                  <span className="service-tag">{service.tag}</span>
+                  <span className="service-number">{String(index + 1).padStart(2, '0')}</span>
+                </div>
                 <h3>{service.title}</h3>
                 <p>{service.desc}</p>
               </article>
